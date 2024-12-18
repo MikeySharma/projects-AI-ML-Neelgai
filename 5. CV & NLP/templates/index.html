@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News OCR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="file"] {
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        select {
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .select-wrapper {
+            position: relative;
+        }
+        .select-wrapper::after {
+            font-size: 12px;
+            color: #555;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Image for OCR</h1>
+        <form action="/process_image" method="post" enctype="multipart/form-data">
+            <label for="image">Choose an image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+            
+            <div class="select-wrapper">
+                <label for="ocr_engine">Select OCR Engine:</label>
+                <select id="ocr_engine" name="ocr_engine">
+                    <option value="paddleocr">PaddleOCR</option>
+                    <option value="tesseract">Tesseract OCR</option>
+                </select>
+            </div>
+
+            <div class="select-wrapper">
+                <label for="abstractive_summarization">Select Model for Abstractive Summarization:</label>
+                <select id="abstractive_summarization" name="abstractive_summarization">
+                    <option value="t5">Flan-T5</option>
+                    <option value="xl_sum">XL_SUM</option>
+                </select>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

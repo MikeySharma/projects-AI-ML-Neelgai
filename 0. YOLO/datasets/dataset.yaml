@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['billboard']
+
+roboflow:
+  workspace: arslan-ongr8
+  project: billboard-xlvz1
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/arslan-ongr8/billboard-xlvz1/dataset/1

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News OCR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .result-section {
+            display: flex;
+            justify-content: space-between;
+        }
+        .result-section div {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .result-section div:last-child {
+            margin-right: 0;
+        }
+        .result-section h1 {
+            margin-bottom: 10px;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>News OCR</h1>
+        <div class="image-container">
+            <img src="{{ image_url }}" alt="Uploaded Image">
+        </div>
+        <div class="result-section">
+            <div>
+                <h1>Extracted Text:</h1>
+                <pre>{{ text }}</pre>
+            </div>
+            <div>
+                <h1>Classification Result:</h1>
+                <pre>{{ classification_result }}</pre>
+
+                <h1> Extractive Summarized Text</h1>
+                <pre>{{ extractive_summarized_news }}</pre>
+
+                <h1> Abstractive Summarized Text</h1>
+                <pre>{{ abstractive_summarized_news }}</pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

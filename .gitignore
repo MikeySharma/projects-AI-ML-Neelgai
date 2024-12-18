@@ -1,0 +1,8 @@
+*.jpg
+*.txt
+*.png
+0. YOLO/yolov8x.pt
+0. YOLO/billboard.zip
+5. CV & NLP/models/news_clasification.pkl
+4. NLP/models/news_clasification.pkl
+.venv
